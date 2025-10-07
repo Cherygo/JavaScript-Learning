@@ -17,18 +17,22 @@
 // -+ "Nate, Zack and 4 more online"
 
 function chatroomStatus(users = []){
+    let usersAmount = users.length;
     switch(true){
-        case users.length == 0:
+        case usersAmount == 0:
             return "no one online";
 
-        case users.length == 1:
+        case usersAmount == 1:
             return `${users[0]} online`
 
-        case users.length == 2:
+        case usersAmount == 2:
             return `${users[0]} and ${users[1]} online`;
 
-        case users.length > 2:
-            return `${users[0]}, ${users[1]} and ${users.length - 2} more online`;
+        case usersAmount > 2:
+            return `${users[0]}, ${users[1]} and ${usersAmount - 2} more online`;
+
+        default:
+            return false;
     }
 }
 console.log(chatroomStatus(["Nate", "Zack", "Simon", "Stefan", "Matt", "Nick"]));
