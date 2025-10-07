@@ -7,15 +7,11 @@
 // isAverageWhole([1, 3]) - true
 // isAverageWhole([1, 2, 3, 4]) - false
 function arrayReduce(numbersArray = []){
-    let temp = 0;
+    let sumArray = 0;
     for(let i = 0; i < numbersArray.length; i++){
-        temp+=numbersArray[i];
+        sumArray+=numbersArray[i];
     }
-    if(temp % numbersArray.length == 0){
-        return true;
-    } else {
-        return false;
-    }
+    return sumArray % numbersArray.length === 0;
 }
 
 console.log(arrayReduce([1, 2, 3, 4, 5]));
