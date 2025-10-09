@@ -7,7 +7,7 @@
 // Notes
 // . Remember that the values are in an object.
 // · Volume is length width height.
-function volumeOfBox(obj = {width, length, height}){
-    return obj.width * obj.height * obj.length;
+function volumeOfBox({width, length, height}){
+    return width * height * length;
 }
 console.log(volumeOfBox({width: 2, length: 5, height: 1}));
