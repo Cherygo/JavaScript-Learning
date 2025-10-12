@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Task 1</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bundle.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1>Sticky note</h1>
+
+      <div class="note">
+        <p id = "stickyP"><span></span></p>
+      </div>
+
+      <div class="keyboard">
+        <div class="keyboard__row">
+          <kbd class="keyboard__key">Esc</kbd>
+          <kbd class="keyboard__key keyboard__key--ghost"></kbd>
+          <kbd class="keyboard__key">F1</kbd>
+          <kbd class="keyboard__key">F2</kbd>
+          <kbd class="keyboard__key">F3</kbd>
+          <kbd class="keyboard__key">F4</kbd>
+          <kbd class="keyboard__key keyboard__key--ghost"></kbd>
+          <kbd class="keyboard__key">F5</kbd>
+          <kbd class="keyboard__key">F6</kbd>
+          <kbd class="keyboard__key">F7</kbd>
+          <kbd class="keyboard__key">F8</kbd>
+          <kbd class="keyboard__key keyboard__key--ghost"></kbd>
+
+          <kbd class="keyboard__key">F9</kbd>
+          <kbd class="keyboard__key">F10</kbd>
+          <kbd class="keyboard__key">F11</kbd>
+          <kbd class="keyboard__key">F12</kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key">PrtSc SysRq</kbd>
+          <kbd class="keyboard__key">Scroll Lock</kbd>
+          <kbd class="keyboard__key">Pause Break</kbd>
+        </div>
+
+        <div class="keyboard__row">
+          <kbd class="keyboard__key">~</kbd>
+          <kbd class="keyboard__key">1</kbd>
+          <kbd class="keyboard__key">2</kbd>
+          <kbd class="keyboard__key">3</kbd>
+          <kbd class="keyboard__key">4</kbd>
+          <kbd class="keyboard__key">5</kbd>
+          <kbd class="keyboard__key">6</kbd>
+          <kbd class="keyboard__key">7</kbd>
+          <kbd class="keyboard__key">8</kbd>
+          <kbd class="keyboard__key">9</kbd>
+          <kbd class="keyboard__key">0</kbd>
+          <kbd class="keyboard__key">-</kbd>
+          <kbd class="keyboard__key">=</kbd>
+          <kbd class="keyboard__key keyboard__key--size1">Backspace</kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key">Insert</kbd>
+          <kbd class="keyboard__key">Home</kbd>
+          <kbd class="keyboard__key">Page up</kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key">Num Lock</kbd>
+          <kbd class="keyboard__key">/</kbd>
+          <kbd class="keyboard__key">*</kbd>
+        </div>
+
+        <div class="keyboard__row">
+          <kbd class="keyboard__key keyboard__key--size2">Tab</kbd>
+          <kbd class="keyboard__key">Q</kbd>
+          <kbd class="keyboard__key">W</kbd>
+          <kbd class="keyboard__key">E</kbd>
+          <kbd class="keyboard__key">R</kbd>
+          <kbd class="keyboard__key">T</kbd>
+          <kbd class="keyboard__key">Y</kbd>
+          <kbd class="keyboard__key">U</kbd>
+          <kbd class="keyboard__key">I</kbd>
+          <kbd class="keyboard__key">O</kbd>
+          <kbd class="keyboard__key">P</kbd>
+          <kbd class="keyboard__key">{</kbd>
+          <kbd class="keyboard__key">}</kbd>
+          <kbd class="keyboard__key keyboard__key--size3">\</kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key">Delete</kbd>
+          <kbd class="keyboard__key">End</kbd>
+          <kbd class="keyboard__key">Page Down</kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key">7</kbd>
+          <kbd class="keyboard__key">8</kbd>
+          <kbd class="keyboard__key">9</kbd>
+        </div>
+
+        <div class="keyboard__row">
+          <kbd class="keyboard__key keyboard__key--size4">Caps Lock</kbd>
+          <kbd class="keyboard__key">A</kbd>
+          <kbd class="keyboard__key">S</kbd>
+          <kbd class="keyboard__key">D</kbd>
+          <kbd class="keyboard__key">F</kbd>
+          <kbd class="keyboard__key">G</kbd>
+          <kbd class="keyboard__key">H</kbd>
+          <kbd class="keyboard__key">J</kbd>
+          <kbd class="keyboard__key">K</kbd>
+          <kbd class="keyboard__key">L</kbd>
+          <kbd class="keyboard__key">;</kbd>
+          <kbd class="keyboard__key">'</kbd>
+          <kbd class="keyboard__key keyboard__key--size5">Enter</kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key keyboard__key--ghost"></kbd>
+          <kbd class="keyboard__key keyboard__key--ghost"></kbd>
+          <kbd class="keyboard__key keyboard__key--ghost"></kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key">4</kbd>
+          <kbd class="keyboard__key">5</kbd>
+          <kbd class="keyboard__key">6</kbd>
+        </div>
+
+        <div class="keyboard__row">
+          <kbd class="keyboard__key keyboard__key--size6">Shift</kbd>
+          <kbd class="keyboard__key">Z</kbd>
+          <kbd class="keyboard__key">X</kbd>
+          <kbd class="keyboard__key">C</kbd>
+          <kbd class="keyboard__key">V</kbd>
+          <kbd class="keyboard__key">B</kbd>
+          <kbd class="keyboard__key">N</kbd>
+          <kbd class="keyboard__key">M</kbd>
+          <kbd class="keyboard__key">,</kbd>
+          <kbd class="keyboard__key">.</kbd>
+          <kbd class="keyboard__key">/</kbd>
+          <kbd class="keyboard__key keyboard__key--size7">Shift</kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key keyboard__key--ghost"></kbd>
+          <kbd class="keyboard__key">↑</kbd>
+          <kbd class="keyboard__key keyboard__key--ghost"></kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key">1</kbd>
+          <kbd class="keyboard__key">2</kbd>
+          <kbd class="keyboard__key">3</kbd>
+        </div>
+
+        <div class="keyboard__row">
+          <kbd class="keyboard__key keyboard__key--size8">Ctrl</kbd>
+          <kbd class="keyboard__key">Win</kbd>
+          <kbd class="keyboard__key">Alt</kbd>
+          <kbd class="keyboard__key keyboard__key--size9"></kbd>
+          <kbd class="keyboard__key">Alt</kbd>
+          <kbd class="keyboard__key">Win</kbd>
+          <kbd class="keyboard__key">⤣</kbd>
+          <kbd class="keyboard__key">Ctrl</kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key">←</kbd>
+          <kbd class="keyboard__key">↓</kbd>
+          <kbd class="keyboard__key">→</kbd>
+
+          <kbd
+            class="keyboard__key keyboard__key--ghost keyboard__key--ghost-small"
+          ></kbd>
+
+          <kbd class="keyboard__key keyboard__key--size10">0</kbd>
+          <kbd class="keyboard__key">Del</kbd>
+        </div>
+      </div>
+
+      <audio class="hidden" src="assets/sounds/key-sound.mp3" id="keystrokeSound"></audio></audio>
+    </div>
+
+    <script type="text/javascript">
+      //... Magic
+      const allKeys = document.querySelectorAll(".keyboard__key");
+      const capsKey = Array.from(
+        document.querySelectorAll(".keyboard__key")
+      ).find((key) => key.textContent.trim().toLowerCase() === "caps lock");
+      const numKey = Array.from(
+        document.querySelectorAll(".keyboard__key")
+      ).find((key) => key.textContent.trim().toLowerCase() === "num lock");
+      const audio = document.getElementById('keystrokeSound');
+      const stickyNote = document.getElementById('stickyP');
+
+      window.addEventListener("keydown", (evt) =>
+    {
+      if(/^[\w\d\S]$/.test(evt.key)){
+            stickyNote.textContent += evt.key;
+          } else if(event.key == ' '){
+            stickyNote.textContent += ' ';
+          } else if(event.key == 'Backspace'){
+            stickyNote.textContent = stickyNote.textContent.slice(0, -1);
+          } else if(event.key == 'Enter'){
+            stickyNote.textContent = stickyNote.textContent + '\n';
+          }
+      allKeys.forEach((key) => {
+          if (key.textContent.trim().toLowerCase() === evt.key.toLowerCase()) {
+            key.classList.add("is-pressed");
+
+            if (capsKey) {
+              if (evt.getModifierState("CapsLock")) {
+                capsKey.classList.add("is-pressed");
+              } else {
+                capsKey.classList.remove("is-pressed");
+              }
+
+              if (numKey) {
+                if (evt.getModifierState("NumLock")) {
+                  numKey.classList.add("is-pressed");
+                } else {
+                  numKey.classList.remove("is-pressed");
+                }
+              }
+            }
+          }
+          if (evt.key.toLowerCase() === "delete") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "delete" || keyText === "del") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "escape") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "escape" || keyText === "esc") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "control") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "control" || keyText === "ctrl") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+            if (evt.key.toLowerCase() === "meta") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "meta" || keyText === "win") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "arrowup") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "arrowup" || keyText === "↑") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "arrowleft") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "arrowleft" || keyText === "←") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "arrowdown") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "arrowdown" || keyText === "↓") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "arrowright") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "arrowright" || keyText === "→") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "pageup") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "page up") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "pagedown") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "page down") {
+                key.classList.add("is-pressed");
+              }
+            })
+          }
+          audio.currentTime = 0;
+          audio.play();
+          console.log(evt.key)
+        });
+      });
+      
+        
+
+      window.addEventListener("keyup", (evt) =>
+        allKeys.forEach((key) => {
+          if (key.textContent.trim().toLowerCase() === evt.key.toLowerCase()) {
+            key.classList.remove("is-pressed");
+          }
+
+          if (key === "delete" || key === "del") {
+            key.classList.remove("is-pressed");
+          }
+
+          if (evt.key.toLowerCase() === "delete") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "delete" || keyText === "del") {
+                key.classList.remove("is-pressed");
+              }
+            });
+          }
+          if (evt.key.toLowerCase() === "escape") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "escape" || keyText === "esc") {
+                key.classList.remove("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "control") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "control" || keyText === "ctrl") {
+                key.classList.remove("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "meta") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "meta" || keyText === "win") {
+                key.classList.remove("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "arrowup") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "arrowup" || keyText === "↑") {
+                key.classList.remove("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "arrowleft") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "arrowleft" || keyText === "←") {
+                key.classList.remove("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "arrowdown") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "arrowdown" || keyText === "↓") {
+                key.classList.remove("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "arrowright") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "arrowright" || keyText === "→") {
+                key.classList.remove("is-pressed");
+              }
+            })
+          }
+                    if (evt.key.toLowerCase() === "pageup") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "page up") {
+                key.classList.remove("is-pressed");
+              }
+            })
+          }
+          if (evt.key.toLowerCase() === "pagedown") {
+            Array.from(allKeys).forEach((key) => {
+              const keyText = key.textContent.trim().toLowerCase();
+              if (keyText === "page down") {
+                key.classList.remove("is-pressed");
+              }
+            })
+          }
+        })
+      );
+    </script>
+  </body>
+</html>
