@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Task 2</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bundle.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+
+          <li>
+            <a href="#">About</a>
+          </li>
+
+          <li>
+            <a href="#">Team</a>
+          </li>
+
+          <li>
+            <a href="#">Our services</a>
+          </li>
+
+          <li>
+            <a href="#">Contact us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="section">
+        <div class="shell">
+          <h1>Lorem ipsum dolor sit amet.</h1>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Praesentium explicabo veritatis libero velit culpa voluptate amet!
+            Laborum deleniti libero quidem mollitia odio porro, beatae, placeat
+            esse, cumque velit similique necessitatibus.
+          </p>
+
+          <a href="#" class="btn">Button</a>
+        </div>
+      </section>
+
+      <span class="cursor"></span>
+
+      <script type="text/javascript">
+        //...Magic
+        const cursorMove = document.getElementsByClassName('cursor')[0];
+        const bigCursor_Selector = 'a, button, h1';
+        window.addEventListener("mousemove", (evt) => {
+          let cursorX = evt.clientX;
+          let cursorY = evt.clientY;
+          const underCursor = document.elementFromPoint(cursorX, cursorY);
+          cursorMove.style.left = (cursorX - cursorMove.offsetWidth / 2) + 'px';
+          cursorMove.style.top = (cursorY - cursorMove.offsetHeight / 2) + 'px';
+          const isExpandable = underCursor && (underCursor.matches(bigCursor_Selector));
+          if(isExpandable){
+            cursorMove.style.width = '40px';
+            cursorMove.style.height = '40px'; 
+          } else {
+            cursorMove.style.width = '20px';
+            cursorMove.style.height = '20px';   
+          }
+          console.log(document.elementFromPoint(cursorX, cursorY));
+      })
+      </script>
+    </div>
+  </body>
+</html>
