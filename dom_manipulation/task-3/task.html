@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Task 3</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bundle.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1>
+        Looney hunter
+
+        <a href="#" class="btn">Start game</a>
+      </h1>
+
+      <div class="game">
+        <div class="game__canvas js-canvas">
+          <div class="game__Target">
+            <div class="game__object" style="right: 258px">
+              <div class="game__target game__target--type3">
+                <img
+                  src="assets/images/daffy.png"
+                  alt=""
+                  width="155"
+                  height="180"
+                />
+              </div>
+
+              <img
+                src="assets/images/tree1.png"
+                alt=""
+                width="254"
+                height="494"
+              />
+            </div>
+
+            <div class="game__object" style="right: 99px">
+              <div class="game__target game__target--type4">
+                <img
+                  src="assets/images/bugs2.png"
+                  alt=""
+                  width="160"
+                  height="187"
+                />
+              </div>
+
+              <img
+                src="assets/images/tree2.png"
+                alt=""
+                width="300"
+                height="477"
+              />
+            </div>
+
+            <div class="game__object" style="right: 517px">
+              <div class="game__target game__target--type5">
+                <img
+                  src="assets/images/bugs2.png"
+                  alt=""
+                  width="112"
+                  height="130"
+                />
+              </div>
+
+              <img
+                src="assets/images/tree3.png"
+                alt=""
+                width="231"
+                height="374"
+              />
+            </div>
+
+            <div class="game__object" style="left: 499px">
+              <div class="game__target game__target--type6">
+                <img
+                  src="assets/images/porky.png"
+                  alt=""
+                  width="98"
+                  height="146"
+                />
+              </div>
+
+              <img
+                src="assets/images/tree5.png"
+                alt=""
+                width="254"
+                height="519"
+              />
+            </div>
+
+            <div class="game__object" style="right: 480px">
+              <div class="game__target game__target--type1">
+                <img
+                  src="assets/images/bugs.png"
+                  alt=""
+                  width="115"
+                  height="130"
+                />
+              </div>
+
+              <img
+                src="assets/images/tree4.png"
+                alt=""
+                width="203"
+                height="232"
+              />
+            </div>
+
+            <div class="game__object" style="bottom: auto; top: 0; left: 0">
+              <div class="game__target game__target--type2">
+                <img
+                  src="assets/images/tweety.png"
+                  alt=""
+                  width="84"
+                  height="100"
+                />
+              </div>
+
+              <img
+                src="assets/images/tree7.png"
+                alt=""
+                width="460"
+                height="308"
+              />
+            </div>
+
+            <div class="game__object">
+              <div class="game__target game__target--type8">
+                <img
+                  src="assets/images/porky.png"
+                  alt=""
+                  width="107"
+                  height="160"
+                />
+              </div>
+
+              <img
+                src="assets/images/tree8.png"
+                alt=""
+                width="330"
+                height="602"
+              />
+            </div>
+
+            <div class="game__object" style="left: 313px">
+              <div class="game__target game__target--type7">
+                <img
+                  src="assets/images/daffy.png"
+                  alt=""
+                  width="172"
+                  height="200"
+                />
+              </div>
+
+              <img
+                src="assets/images/tree6.png"
+                alt=""
+                width="206"
+                height="457"
+              />
+            </div>
+          </div>
+
+          <div class="game__gun" style="transform-origin: center center;"></div>
+
+          <span class="game__score">0</span>
+        </div>
+      </div>
+
+      <audio preload="" class="hidden" src="assets/sounds/gun.mp3" id="gunshot"></audio>
+    </div>
+
+    <script type="text/javascript">
+      //... Magic
+      const button = document.querySelector('.btn');
+      const time = 20000;
+      const gameTargets = document.querySelectorAll('.game__target');
+      const scoreLabel = document.querySelector('.game__score');
+      let randomSpawnTimer = Math.floor(Math.random() * 3000);
+
+      //game start
+      button.addEventListener('click', (evt) => {
+        scoreLabel.textContent = 0;
+        let score = 0;
+        let availableTargets = gameTargets.length;
+        //target spawn 0-3 sec interval
+        setInterval(() => {
+        num = Math.floor(Math.random() * gameTargets.length);
+        console.log("rolled " + num);
+        let gameTarget = gameTargets[num];
+
+        while(gameTarget.classList.contains('active') && availableTargets > 0) {
+          num = Math.floor(Math.random() * gameTargets.length);
+          gameTarget = gameTargets[num];
+          availableTargets--;
+          console.log(`rerolled ${num}`);
+        };
+
+        if(gameTarget.classList.contains('active')) {
+          return;
+        };
+        gameTarget.classList.add('active');
+        gameTarget.style.zIndex = 2;
+        
+        gameTarget.addEventListener('click', (evt) => {
+          gameTarget.style.zIndex = 0;
+          gameTarget.classList.remove('active');
+          score = score + 1;
+          scoreLabel.textContent = score;
+        }, 
+        {once : true} );
+        }, randomSpawnTimer);        
+        
+        setTimeout(() => {
+          evt.preventDefault();
+          alert(`Time's up!\nYour score is: ${score} ${score === 1 ? 'point' : 'points'}`);
+          
+        }, time);
+      });
+
+      
+      const canvas = document.querySelector('.game__canvas');
+
+      //gun movement
+      const gameGun = document.querySelector('.game__gun');
+      window.addEventListener('mousemove', (evt) => {
+        const gunPos = gameGun.getBoundingClientRect(); //calculates element's position and size on screen
+        const centerX = gunPos.left + gunPos.width / 2;
+        const centerY = gunPos.top + gunPos.height / 2;
+
+        const angle = Math.atan2(evt.clientY - centerY, evt.clientX - centerX) * 180 / Math.PI;
+        gameGun.style.transform = `rotate(${angle + 90}deg)`;
+      })
+
+      //gunshot sound
+      const audio = document.getElementById('gunshot');
+      canvas.addEventListener('click', (evt) => {
+        if(evt.button === 0) {
+          audio.currentTime = 0;
+          audio.play();
+          console.log('clicked');
+        }
+      });
+    </script>
+  </body>
+</html>
