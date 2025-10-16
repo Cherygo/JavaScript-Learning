@@ -188,7 +188,7 @@
         let score = 0;
         let availableTargets = gameTargets.length;
         //target spawn 0-3 sec interval
-        setInterval(() => {
+        const intervalId = setInterval(() => {
         num = Math.floor(Math.random() * gameTargets.length);
         console.log("rolled " + num);
         let gameTarget = gameTargets[num];
@@ -218,7 +218,7 @@
         setTimeout(() => {
           evt.preventDefault();
           alert(`Time's up!\nYour score is: ${score} ${score === 1 ? 'point' : 'points'}`);
-          
+          clearInterval(intervalId);
         }, time);
       });
 
